@@ -12,4 +12,12 @@ let ValueInNumber = Number(score)
 
 let log = 1
 let bool = Boolean(log)
-console.log(bool);
+//console.log(bool);
+
+
+// **************** Operations *****************
+
+let value = 3
+let negV = -value
+//console.log(negV);
+
