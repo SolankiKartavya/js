@@ -12,7 +12,7 @@ let userEmail;
 const id = Symbol('123')
 const anotherId = Symbol('123')
 
-console.log(id === anotherId);
+//console.log(id === anotherId);
 
 const BigNumber = 748785432154478888n
 
@@ -33,4 +33,14 @@ const myFunction = function(){
     console.log("Hello");
 }
 
-console.log(typeof BigNumber);
+//console.log(typeof BigNumber);
+
+
+//*************************  Memory***********/
+
+//Stack (Primitive) , Heap (Non-primitive)
+
+let sk = "sk@gmail.com"
+
+let skboss = sk
+sk = "kartavya"
