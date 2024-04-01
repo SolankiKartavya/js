@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color:#fff">
+    <ul class="language">
+        <li >Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLang(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLang("python")
+    addLang("typescript")
+
+    function addOptLan(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptLan("goLang")
+
+    //Edit
+    const slang = document.querySelector("li:nth-child(2)")
+    //slang.innerHTML = "Mojo"
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    slang.replaceWith(newLi)
+
+    //edit
+    const flanf = document.querySelector("li:first-child")
+    flanf.outerHTML = '<li>Typescript</li>'
+
+    //remove,Delete
+
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+</html>
