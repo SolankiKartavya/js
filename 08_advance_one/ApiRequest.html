@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table border="2">
+        <center>
+        <tr>
+            <th><h2>Name</h2></th>
+            <th><h2>Avatar</h2></th>
+            <th><h2>Bio</h2></th>
+            <th><h2>Followers Count</h2></th>
+        </tr>
+        <tr>
+            <td><h2 id="name"></h2></td>
+            <td><img height="100px" id="avt" src="" alt="Image"></td>
+            <td><h2 id="bio"></h2></td>
+            <td><h2 id="follow"></h2></td>
+        </tr>
+    </center>
+    </table>
+    
+
+</body>
+<script>
+    const reqUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET',reqUrl)
+
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            const image = (data.avatar_url)
+            console.log(data);
+            document.getElementById('name').innerHTML = data.name
+            document.getElementById('avt').src = data.avatar_url
+            document.getElementById('bio').innerHTML = data.bio
+            document.getElementById('follow').innerHTML = data.followers
+        }
+    }
+
+    console.log(xhr.readyState);
+    xhr.send();
+</script>
+</html>
